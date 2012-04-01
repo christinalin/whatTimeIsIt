@@ -1,0 +1,55 @@
+<html>
+	<HEAD>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<SCRIPT LANGUAGE="JavaScript">
+			var timerID = null;
+			var timerRunning = false;
+
+			function stopclock() {
+
+				if(timerRunning)
+					clearTimeout(timerID);
+				timerRunning = false;
+
+			}
+			function showtime() {
+
+				// Get the current time
+				var now = new Date();
+				var hours = now.getHours();
+				var minutes = now.getMinutes();
+				var seconds = now.getSeconds()
+				var hourValue = "" + ((hours > 12) ? hours - 12 : hours)
+
+				if(hourValue == "0")
+					hourValue = 12;
+					
+				hourValue += ((minutes < 10) ? ":0" : ":") + minutes;
+				hourValue += ((seconds < 10) ? ":0" : ":") + seconds;
+				hourValue += (hours >= 12) ? " P.M." : " A.M."
+				
+				document.getElementById('face').innerHTML = hourValue ;
+				
+				timerID = setTimeout("showtime()", 1000);
+				timerRunning = true;
+			}
+
+			function startclock() {
+
+				showtime();
+			}
+
+		</SCRIPT>
+
+		<BODY onLoad="startclock()">
+
+				<div id="clock">
+					<div id="number-wrap">
+						<div id="face" value=""> </div>
+					</div>
+				</div>
+				
+				
+		</body>
+		
+</html>

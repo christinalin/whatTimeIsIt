@@ -1,0 +1,32 @@
+#clock 
+{
+    background-color: #00FFFF;
+    color: white;
+    display: block;
+    left: 0;
+    overflow: visible;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    visibility: visible;
+    width: 100%;
+}
+
+#number-wrap
+{
+	//
+}
+
+#face 
+{
+	background-color: #669966;
+    font-family: Verdana,Geneva,Arial,sans-serif;
+    font-size: 130px;
+    height: 280px;
+    left: 50%;
+    margin-left: -500px;
+    padding-top: 75px;
+    position: absolute;
+    top: -175px;
+    visibility: visible;
+    width: 1000px;}
